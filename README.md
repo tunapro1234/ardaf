@@ -1,3 +1,2 @@
-# Pygame Template
-paket ismini değiştir 
-res.glob içinden title ı değiştir
+# Arda için ufak bir facebook botu
+Beklediğimden daha uzun sürüyor ve hala test ve database işindeyim
