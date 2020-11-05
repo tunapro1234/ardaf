@@ -14,8 +14,8 @@ post_modes = [PostModes.relative_id, PostModes.relative_path]
 
 json_path = "ardaf/res/profile/profile.json"
 default_profile = {
-    "index":0,
-    "profile_url": "tuna.gul.1238",
-    "email":"tunagul54@gmail.com",
-    "password":"tunapro1234",
+    "index": 0,
+    "url": "tuna.gul.1238",
+    "email": "tunagul54@gmail.com",
+    "password": "tunapro1234",
 }

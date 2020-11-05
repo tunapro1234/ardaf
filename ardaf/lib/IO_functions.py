@@ -1,20 +1,40 @@
+import ardaf.lib.interface as interface
 import ardaf.res.glob as glob
 import base64
 import json
 
-def encrypt(obj):
-    return {key: (base64.b64encode(value.encode()).decode() if type(value) is str else value) for key, value in obj.items()}
 
-def decrypt(obj):
-    return {key: (base64.b64decode(value.encode()).decode() if type(value) is str else value) for key, value in obj.items()}
+def check_dict(object):
+    for key in glob.default_profile:
+        if key not in object:
+            return False
+    return True
+        
+
+def encrypt(object):
+    return {
+        key: (base64.b64encode(value.encode()).decode()
+              if type(value) is str else value)
+        for key, value in object.items()
+    }
+
+
+def decrypt(object):
+    return {
+        key: (base64.b64decode(value.encode()).decode()
+              if type(value) is str else value)
+        for key, value in object.items()
+    }
+
 
 def create_file(path=glob.json_path):
     try:
         with open(path, "w+"):
-            pass    
+            pass
     except:
         raise Exception("Dosya oluşturulamıyor")
     return True
+
 
 def get_settings(path=glob.json_path):
     try:
@@ -28,11 +48,14 @@ def get_settings(path=glob.json_path):
 
     return decrypt(read)
 
+
 def save_settings(settings, path=glob.json_path):
+    if not check_dict(settings):
+        raise Exception("Internal Error 1")
+    
     try:
         with open(path, "w+") as file:
             json.dump(encrypt(settings), file)
     except:
         raise Exception("Yazma hatası.")
     return True
-
