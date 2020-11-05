@@ -7,9 +7,6 @@ from selenium.webdriver.common.by import By
 from selenium import webdriver
 
 import ardaf.res.glob as glob
-import unittest
-
-küçük birfrom ardaf.res.glob import PostModes
 
 
 class TestPost:
