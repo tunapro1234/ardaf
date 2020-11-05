@@ -17,5 +17,5 @@ default_profile = {
     "index":0,
     "profile_url": "tuna.gul.1238",
     "email":"tunagul54@gmail.com",
-    "password":"VHVuYTI5MDkwNA==",
+    "password":"tunapro1234",
 }
